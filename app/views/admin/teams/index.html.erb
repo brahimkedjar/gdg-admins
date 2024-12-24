@@ -1,0 +1,92 @@
+<h1 class="page-title">Teams</h1>
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Leader Phone</th>
+      <th>Idea Description</th>
+      <th>Members</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.name %></td>
+        <td><%= team.leader_phone %></td>
+        <td><%= team.idea_description %></td>
+        <td>
+          <ul>
+            <% team.members.each do |member| %>
+              <li><%= member.name %> (<%= member.email %>)</li>
+            <% end %>
+          </ul>
+        </td>
+        <td>
+          <%= link_to 'Show', admin_team_path(team), class: 'btn btn-primary' %>
+          <%= link_to 'Edit', edit_admin_team_path(team), class: 'btn btn-secondary' %>
+          <%= link_to 'Delete', admin_team_path(team), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<style>
+.page-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1rem;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.styled-table th {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: center;
+}
+
+.styled-table tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+</style>

@@ -1,0 +1,134 @@
+<div class="container mt-5">
+  <h1>Individuals</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Competence</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @individuals.each do |individual| %>
+        <tr>
+          <td><%= individual.name %></td>
+          <td><%= individual.email %></td>
+          <td><%= individual.role %></td>
+          <td><%= individual.competence %></td>
+          <td>
+            <%= link_to 'Show', admin_individual_path(individual), class: 'btn btn-info btn-sm' %>
+            <%= link_to 'Delete', admin_individual_path(individual), method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  /* Styling the container */
+  .container {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+
+  /* Heading styles */
+  .container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Table styles */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+
+  .table thead {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .table tr:hover {
+    background-color: #f1f7ff;
+  }
+
+  /* Button styles */
+  .btn {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-info {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+
+  .btn-info:hover {
+    background-color: #138496;
+  }
+
+  .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+  }
+
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+</style>
+
+<div class="container">
+  <h1>Individuals</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Competence</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @individuals.each do |individual| %>
+        <tr>
+          <td><%= individual.name %></td>
+          <td><%= individual.email %></td>
+          <td><%= individual.role %></td>
+          <td><%= individual.competence %></td>
+          <td>
+            <%= link_to 'Show', admin_individual_path(individual), class: 'btn btn-info btn-sm' %>
+            <%= link_to 'Delete', admin_individual_path(individual), method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

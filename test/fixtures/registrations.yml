@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_team: false
+  competence: MyText
+  team_id: one
+
+two:
+  is_team: false
+  competence: MyText
+  team_id: two

@@ -1,0 +1,68 @@
+<style>
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .login-container h1 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+  }
+
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .login-container input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .login-container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .login-container button:hover {
+    background-color: #0056b3;
+  }
+
+  .alert {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="container mt-5">
+  <h1>Admin Login</h1>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger"><%= flash[:alert] %></div>
+  <% end %>
+  
+  <%= form_with url: login_path, local: true do |f| %>
+    <div class="form-group">
+      <%= f.password_field :password, placeholder: "Enter Password", class: "form-control", required: true %>
+    </div>
+    <div class="form-group mt-3">
+      <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+  <% end %>
+</div>
