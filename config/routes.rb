@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  root 'dashboard#index'  # or whatever controller/action is appropriate
+
   get "up" => "rails/health#show", as: :rails_health_check
   post 'registrations', to: 'registrations#create'
   post 'contact', to: 'contacts#create'
